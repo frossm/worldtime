@@ -1,5 +1,5 @@
 name: worldtime
-version: '1.0.0'
+version: '1.0.1'
 summary: WorldTime is a console based tool to display local times around the world
 description: |
   WorldTime is a small utility that will display local time in cities

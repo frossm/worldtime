@@ -3,7 +3,7 @@
 
 	<groupId>org.fross</groupId>
 	<artifactId>worldtime</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>worldtime</name>

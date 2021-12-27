@@ -63,6 +63,7 @@ public class Help {
 		Output.printColorln(Ansi.Color.WHITE, " -x FILE       Export your saved timezone/cities to the provided file");
 
 		Output.printColorln(Ansi.Color.YELLOW, "\nManaging Display:");
+		Output.printColorln(Ansi.Color.WHITE, " -2  Display time in 24 hour format instead of the default 12 hour format");
 		Output.printColorln(Ansi.Color.WHITE, " -d  Show detailed time information");
 		Output.printColorln(Ansi.Color.WHITE, " -z  Disable colorized output");
 

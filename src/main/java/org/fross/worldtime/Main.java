@@ -44,6 +44,7 @@ import gnu.getopt.Getopt;
  * @author Michael
  *
  */
+
 public class Main {
 	// Class Constants
 	protected static final String PROPERTIES_FILE = "app.properties";
@@ -55,13 +56,36 @@ public class Main {
 	public static String programVersion;
 	public static String programCopyright;
 
-	// public static String
+	/**
+	 * to12Hour(): When send the world time object, it will return the time in 12 hour format
+	 * 
+	 * @param wt
+	 * @return
+	 */
+	public static String to12Hour(WorldTime wt) {
+		int hour = Integer.parseInt(wt.queryValue("hour"));
+		int min = Integer.parseInt(wt.queryValue("minute"));
+		int sec = Integer.parseInt(wt.queryValue("second"));
 
+		String result = ((hour % 12 == 0) ? "12" : ((hour % 12) > 9 ? (hour % 12) : "0" + (hour % 12))) + ":";
+		result += ((min > 9) ? min : ("0" + min)) + ":";
+		result += (sec > 9 ? sec : "0" + sec) + " ";
+		result += ((hour >= 12) ? "PM" : "AM");
+
+		return result;
+	}
+
+	/**
+	 * Main(): Main program execution loop
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		int optionEntry;
 		ArrayList<String> areaCitiesList = new ArrayList<String>();
 		boolean flagDetailed = false;
 		boolean flagAddToFavorites = false;
+		boolean flag24HourFormat = false;
 
 		// Process application level properties file
 		// Update properties from Maven at build time:
@@ -84,10 +108,10 @@ public class Main {
 		SupportedCities sc = new SupportedCities();
 
 		// Display program header
-		Output.printColorln(Ansi.Color.CYAN, "WorldTime v" + programVersion + "  " + programCopyright + "\n");
+		Output.printColorln(Ansi.Color.CYAN, "WorldTime v" + programVersion + "  " + programCopyright);
 
 		// Process Command Line Options and set flags where needed
-		Getopt optG = new Getopt("WorldTime", args, "Dh?vaei:lrsx:dz");
+		Getopt optG = new Getopt("WorldTime", args, "Dh?vaei:lrsx:2dz");
 		while ((optionEntry = optG.getopt()) != -1) {
 			switch (optionEntry) {
 
@@ -175,6 +199,11 @@ public class Main {
 			/*****************************************
 			 ** Managing Display
 			 *****************************************/
+			// Show time value in 24 hour format instead of 12
+			case '2':
+				flag24HourFormat = true;
+				break;
+
 			// Show detailed output on each TZ/City
 			case 'd':
 				flagDetailed = true;
@@ -226,26 +255,29 @@ public class Main {
 			}
 
 			// Print the City Name
-			Output.printColorln(Ansi.Color.YELLOW, (areaCity.substring(areaCity.indexOf('/') + 1).toUpperCase()));
+			Output.printColorln(Ansi.Color.YELLOW, "\n" + (areaCity.substring(areaCity.lastIndexOf('/') + 1).toUpperCase().replace("_", " ")));
 
 			WorldTime wt = new WorldTime(WORLD_TIME_API_ROOT_URL + areaCity);
 
 			// If a detailed view is requested with -d, give all information and jump to next city
 			if (flagDetailed == true) {
 				Output.printColorln(Ansi.Color.WHITE, wt.queryValueAll(WORLD_TIME_API_ROOT_URL + areaCity));
-				break;
+				continue;
 			}
 
 			// Display the result
 			Output.printColor(Ansi.Color.WHITE, wt.queryValue("day_of_week_name") + ", ");
 			Output.printColor(Ansi.Color.WHITE, wt.queryValue("monthname") + " ");
 			Output.printColor(Ansi.Color.WHITE, wt.queryValue("day") + ", " + wt.queryValue("year") + "  ");
-			Output.printColor(Ansi.Color.WHITE, wt.queryValue("hour") + ":");
-			Output.printColor(Ansi.Color.WHITE, wt.queryValue("minute") + ":");
-			Output.printColorln(Ansi.Color.WHITE, wt.queryValue("second"));
 
-			Output.println("");
+			if (flag24HourFormat == true) {
+				Output.printColor(Ansi.Color.WHITE, wt.queryValue("hour") + ":");
+				Output.printColor(Ansi.Color.WHITE, wt.queryValue("minute") + ":");
+				Output.printColorln(Ansi.Color.WHITE, wt.queryValue("second"));
+			} else {
+				Output.printColorln(Ansi.Color.WHITE, to12Hour(wt));
+			}
+
 		}
-
 	}
 }
