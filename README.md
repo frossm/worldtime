@@ -45,7 +45,6 @@ Regardless of the installation method, there is nothing to install.  Everything 
 TBD
 
 
-
 ### SNAP Installation
 
 [![worldtime](https://snapcraft.io//quoter/badge.svg)](https://snapcraft.io/worldtime)
