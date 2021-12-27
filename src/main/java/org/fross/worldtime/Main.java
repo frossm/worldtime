@@ -265,18 +265,22 @@ public class Main {
 				continue;
 			}
 
-			// Display the result
+			// Display the date
 			Output.printColor(Ansi.Color.WHITE, wt.queryValue("day_of_week_name") + ", ");
 			Output.printColor(Ansi.Color.WHITE, wt.queryValue("monthname") + " ");
-			Output.printColor(Ansi.Color.WHITE, wt.queryValue("day") + ", " + wt.queryValue("year") + "  ");
+			Output.printColor(Ansi.Color.WHITE, wt.queryValue("day") + ", " + wt.queryValue("year") + " ");
 
+			// Display the time
 			if (flag24HourFormat == true) {
 				Output.printColor(Ansi.Color.WHITE, wt.queryValue("hour") + ":");
 				Output.printColor(Ansi.Color.WHITE, wt.queryValue("minute") + ":");
 				Output.printColorln(Ansi.Color.WHITE, wt.queryValue("second"));
 			} else {
-				Output.printColorln(Ansi.Color.WHITE, to12Hour(wt));
+				Output.printColor(Ansi.Color.WHITE, to12Hour(wt));
 			}
+
+			// Display the time zone
+			Output.printColorln(Ansi.Color.WHITE, " " + wt.queryValue("abbreviation"));
 
 		}
 	}
