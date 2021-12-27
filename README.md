@@ -37,6 +37,7 @@ Regardless of the installation method, there is nothing to install.  Everything 
 #### Managing Display
 |Option|Description|
 |------|-----------|
+|-2|Show time display in 24 hour format instead of the default 12 hour method|
 |-d|Show detailed time information for each city provided and/or are in your favorites|
 |-z|By default, the output of WorldTime used color.  When run with the `-z` switch, colorized output is disabled|
 
