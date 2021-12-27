@@ -246,6 +246,13 @@ public class Main {
 			areaCitiesList.add(i);
 		}
 
+		// If there are no favorites and no AREA/CITY information on the command line, just show the help and exit
+		if (areaCitiesList.isEmpty()) {
+			Output.printColorln(Ansi.Color.RED, "ERROR: There is no AREA/CITY information in Favorites or on the command line");
+			Help.Display();
+			System.exit(0);
+		}
+
 		// Loop through each AREA/CITY in our CitiesListd and get the time zone information
 		for (String areaCity : areaCitiesList) {
 			// Determine if area/city is valid
