@@ -2,7 +2,7 @@
 
 *The console based tool to display times around the world*
 
-<img align="right" width="300" src="https://github.com/frossm/worldtime/blob/master/graphics/WorldTimeLogo500.jpg">Worldtime is a simple command line tool to display local times in various locations around the globe.  There are a lot of very nice web-based tools to do this, but I wanted something simple that can be executed quickly on the command line.  It also needed to be able to store the areas/cities that I use most frequently.
+<img align="right" width="300" src="https://github.com/frossm/worldtime/blob/master/graphics/WorldTimeLogo500.png">Worldtime is a simple command line tool to display local times in various locations around the globe.  There are a lot of very nice web-based tools to do this, but I wanted something simple that can be executed quickly on the command line.  It also needed to be able to store the areas/cities that I use most frequently.
 
 ## Program Setup
 If you are using this as worldtime.jar file, then you'll need to have Java installed.  It's written in Java so it can run on most operating systems.  To execute the program, use the following command from the console:
