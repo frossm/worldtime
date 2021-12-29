@@ -2,18 +2,24 @@
 
 *The console based tool to display times around the world*
 
-<img align="right" width="300" src="https://github.com/frossm/worldtime/blob/master/graphics/WorldTimeLogo500.png">Worldtime is a simple command line tool to display local times in various locations around the globe.  There are a lot of very nice web-based tools to do this, but I wanted something simple that can be executed quickly on the command line.  It also needed to be able to store the areas/cities that I use most frequently.
+<img align="right" width="300" src="https://github.com/frossm/worldtime/blob/master/graphics/WorldTimeLogo500.png">Worldtime is a simple command line tool to display local times in various locations around the globe.  There are a lot of very nice web-based tools to do this, but I wanted something simple that can be executed quickly on the command line.  It also needed to be able to store the areas/cities that I use most frequently and hand the various daylight saving time implementations.
 
 ## Program Setup
-If you are using this as worldtime.jar file, then you'll need to have Java installed.  It's written in Java so it can run on most operating systems.  To execute the program, use the following command from the console:
+If you are using this as worldtime.jar file, then you'll need to have Java installed.  WorldTime is written in Java so it can run on most operating systems.  To execute the program, use the following command from the console:
 
 *java -jar worldtime.jar [options] [area/city] [area/city] [...]*
 
-If you are using this as a snap, then you do not have to have java installed and to run WorldTime, you'll simply need to execute:
+Please note that is nothing to install.  Everything is contained in executable JAR file.  To remove WorldTime, just delete the file.  Simple.
 
-*worldtime [options] [area/city] [area/city] [...]*
+If you are using this as a snap, then you do not have to have java installed as it will be contained in the snap package.  To install WorldTime, you'll simply need to execute:
 
-Regardless of the installation method, there is nothing to install.  Everything is contained in executable JAR file.
+    snap install worldtime
+    
+Then to execute WorldTime:
+
+    worldtime [options] [area/city] [area/city] [...]
+
+You should not need any special snap permissions to run, although you may when I get around to doing the favorites import & export.
 
 ## Program Options
 
@@ -40,7 +46,7 @@ Regardless of the installation method, there is nothing to install.  Everything 
 |------|-----------|
 |-2|Show time display in 24 hour format instead of the default 12 hour method|
 |-d|Show detailed time information for each city provided and/or are in your favorites|
-|-z|By default, the output of WorldTime used color.  When run with the `-z` switch, colorized output is disabled|
+|-z|By default, the output of WorldTime used color.  When run with the `-z` switch, colorized output is disabled. Please note that some options are process in the order they are entered and may contain color output.  Therefore, to ensure no color is output, please make the `-z` the first option|
 
 #### Examples of Usage
 TBD
