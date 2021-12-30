@@ -285,7 +285,7 @@ public class Main {
 			if (flag24HourFormat == true) {
 				Output.printColor(Ansi.Color.WHITE, wt.queryValue("hour") + ":");
 				Output.printColor(Ansi.Color.WHITE, wt.queryValue("minute") + ":");
-				Output.printColorln(Ansi.Color.WHITE, wt.queryValue("second"));
+				Output.printColor(Ansi.Color.WHITE, wt.queryValue("second"));
 			} else {
 				Output.printColor(Ansi.Color.WHITE, to12Hour(wt));
 			}
