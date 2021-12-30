@@ -157,6 +157,8 @@ public class Main {
 
 			// Import a list of favorites and replace those currently saved
 			case 'i':
+				Output.printColorln(Ansi.Color.RED, "Import has not yet been implemented.  Stay tuned...");
+				System.exit(0);
 				break;
 
 			// List current favorite cities
@@ -194,6 +196,8 @@ public class Main {
 
 			// Export the TZ/City information to the provided file
 			case 'x':
+				Output.printColorln(Ansi.Color.RED, "Export has not yet been implemented.  Stay tuned...");
+				System.exit(0);
 				break;
 
 			/*****************************************
@@ -287,8 +291,14 @@ public class Main {
 			}
 
 			// Display the time zone
-			Output.printColorln(Ansi.Color.WHITE, " " + wt.queryValue("abbreviation"));
+			Output.printColor(Ansi.Color.WHITE, " " + wt.queryValue("abbreviation"));
+			
+			// Display the GMT offset
+			Output.printColorln(Ansi.Color.CYAN, " [UTC " + wt.queryValue("utc_offset") + "]");
 
 		}
+		
+		// End with a new line so on Linux you have a line between this and the prompt
+		Output.println("");
 	}
 }

@@ -2,12 +2,17 @@
 
 *The console based tool to display times around the world*
 
-<img align="right" width="300" src="https://github.com/frossm/worldtime/blob/master/graphics/WorldTimeLogo500.png">Worldtime is a simple command line tool to display local times in various locations around the globe.  There are a lot of very nice web-based tools to do this, but I wanted something simple that can be executed quickly on the command line.  It also needed to be able to store the areas/cities that I use most frequently and hand the various daylight saving time implementations.
+<img align="right" width="300" src="https://github.com/frossm/worldtime/blob/master/graphics/WorldTimeLogo500.png">Worldtime is a simple command line tool to display the current local times in various locations around the globe.  There are a lot of very nice web-based tools to do this, and much nicer than this little program, but I wanted something simple that can be executed quickly on the command line.  It also needed to be able to store the areas/cities that I use most frequently and handle the various daylight saving time implementations that exist
+
+Overall, I'm happy with this little tool and not sure what updates or enhancements I'd make, but if anyone has ideas, please post them on the GitHub discussion board and I'll do my best to implement.
 
 ## Program Setup
-If you are using this as worldtime.jar file, then you'll need to have Java installed.  WorldTime is written in Java so it can run on most operating systems.  To execute the program, use the following command from the console:
+If you are using this as the worldtime.jar file, then you'll need to have Java installed.  WorldTime is written in Java so it can run on most operating systems.  To execute the program, use the following command from the console:
 
-*java -jar worldtime.jar [options] [area/city] [area/city] [...]*
+    java -jar worldtime.jar [options] [area/city] [area/city] [...]
+
+If you have saved favorites, you don't need any area/city items, and I don't use any options with normal use.  I've also aliased this so that 
+**worldtime** will run the above.  Some shells will even allow you to define ".jar" as an executable extension.
 
 Please note that is nothing to install.  Everything is contained in executable JAR file.  To remove WorldTime, just delete the file.  Simple.
 
@@ -28,7 +33,7 @@ You should not need any special snap permissions to run, although you may when I
 |------|-----------|
 |-D|Start in Debug Mode.  Not really useful to an end user, but if you are curious what's going on behind the scenes...|
 |-h <br>-?|Display the program help information|
-|-v|Show the program version and also check Github for the latest released version|
+|-v|Show the program version and also check GitHub for the latest released version.  If you are using a SNAP, then you are most likely on the latest version and perhaps newer than the GitHub release|
 
 #### Managing Favorites
 |Option|Description|
@@ -38,29 +43,26 @@ You should not need any special snap permissions to run, although you may when I
 |-i FILE|Import a new set of favorites from an external file.  This will clear the old favorites before importing.  Please note that this is not yet implemented|
 |-l|List the current saved favorites|
 |-r AREA/CITY|Remove the AREA/CITY on the command line from the favorites.  Currently only the first AREA/CITY entered will be removed.  This will be updated later to remove all AREA/CITY items on the command line|
-|-s|Show all supported AREA/CITY combinations.  This is very important as you'll probably start with `-s` to determine which ones to add to your favorites|
+|-s|Show all supported AREA/CITY combinations.  This is very important as you'll probably start with `-s` to determine which ones you'd like to add to your favorites|
 |-x FILE|Export the current favorites to the file provided.  Please note that this it not yet implemented|
 
-#### Managing Display
+#### Managing Display Options
 |Option|Description|
 |------|-----------|
 |-2|Show time display in 24 hour format instead of the default 12 hour method|
 |-d|Show detailed time information for each city provided and/or are in your favorites|
-|-z|By default, the output of WorldTime used color.  When run with the `-z` switch, colorized output is disabled. Please note that some options are process in the order they are entered and may contain color output.  Therefore, to ensure no color is output, please make the `-z` the first option|
-
-#### Examples of Usage
-TBD
+|-z|By default, the output of WorldTime used color.  When run with the `-z` switch, colorized output is disabled. Please note that some options are processed in the order they are entered and may contain color output.  Therefore, to ensure no color is output, please make the `-z` the first option|
 
 
-### SNAP Installation
+### SNAP Details
 
 [![worldtime](https://snapcraft.io//quoter/badge.svg)](https://snapcraft.io/worldtime)
 
 I would encourage anyone with a supported Linux platform to install WorldTime as a snap.  See [Snapcraft Homepage](https://snapcraft.io) for more information. You can download, install, and keep the application up to date automatically by installing the snap via :
 
-`sudo snap install worldtime`  (Assuming snap is installed.  Ubuntu has it by default)
+`sudo snap install worldtime`  (Assuming snap is installed.  Ubuntu and most of it's derivatives have it installed by default)
 
-This will install the application into a sandbox where it is separate from other applications.  Java is even included in the SNAP package so you don't evey have to have it elsewhere.  I do want to look at packaging it via Flatpak as well, but my understanding is that Maven is not well supported.  However, I need to do more investigation.
+This will install the application into a sandbox where it is separate from other applications.  Java is even included in the SNAP package so you don't even have to have it elsewhere.
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/worldtime)
 
