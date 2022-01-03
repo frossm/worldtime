@@ -157,7 +157,11 @@ public class Main {
 
 			// Import a list of favorites and replace those currently saved
 			case 'i':
-				Output.printColorln(Ansi.Color.RED, "Import has not yet been implemented.  Stay tuned...");
+				String importFileName = optG.getOptarg();
+				Output.printColorln(Ansi.Color.CYAN, "Importing favorites from: '" + importFileName + "'");
+				ArrayList<String> importedFavs = FileImporter.readFavorites(importFileName);
+				Favorites.eraseAll();
+				Favorites.add(importedFavs);
 				System.exit(0);
 				break;
 
@@ -196,7 +200,11 @@ public class Main {
 
 			// Export the TZ/City information to the provided file
 			case 'x':
-				Output.printColorln(Ansi.Color.RED, "Export has not yet been implemented.  Stay tuned...");
+				String exportFileName = optG.getOptarg();
+				Output.printColorln(Ansi.Color.CYAN, "Exporting favorites to: '" + exportFileName + "'");
+				FileExporter fe = new FileExporter(exportFileName);
+				fe.exportFavorites();
+				fe.close();
 				System.exit(0);
 				break;
 
@@ -292,12 +300,12 @@ public class Main {
 
 			// Display the time zone
 			Output.printColor(Ansi.Color.WHITE, " " + wt.queryValue("abbreviation"));
-			
+
 			// Display the GMT offset
 			Output.printColorln(Ansi.Color.CYAN, " [UTC " + wt.queryValue("utc_offset") + "]");
 
 		}
-		
+
 		// End with a new line so on Linux you have a line between this and the prompt
 		Output.println("");
 	}

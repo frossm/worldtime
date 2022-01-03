@@ -24,7 +24,7 @@ Then to execute WorldTime:
 
     worldtime [options] [area/city] [area/city] [...]
 
-You should not need any special snap permissions to run, although you may when I get around to doing the favorites import & export.
+You should not need any special snap permissions to run, although without assigning the snap more file system access permissions, you may only be able to export your favorites to your home directory.  I'll need to look into this.
 
 ## Program Options
 
@@ -40,11 +40,11 @@ You should not need any special snap permissions to run, although you may when I
 |------|-----------|
 |-a|Add the AREA/CITY(s) provided on the command line to the favorites.  These are stored in the Java preferences system and the location varies by OS|
 |-e|Erase all saved favorites|
-|-i FILE|Import a new set of favorites from an external file.  This will clear the old favorites before importing.  Please note that this is not yet implemented|
+|-i FILE|Import a new set of favorites from an external file.  Existing favorites will be replaced by the imported set.  The format is simply one AREA/CITY per line|
 |-l|List the current saved favorites|
 |-r AREA/CITY|Remove the AREA/CITY on the command line from the favorites.  Currently only the first AREA/CITY entered will be removed.  This will be updated later to remove all AREA/CITY items on the command line|
 |-s|Show all supported AREA/CITY combinations.  This is very important as you'll probably start with `-s` to determine which ones you'd like to add to your favorites|
-|-x FILE|Export the current favorites to the file provided.  Please note that this it not yet implemented|
+|-x FILE|Export the current favorites to the file provided.  The format is simply one AREA/CITY per line|
 
 #### Managing Display Options
 |Option|Description|

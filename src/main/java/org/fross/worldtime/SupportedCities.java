@@ -78,8 +78,8 @@ public class SupportedCities {
 	}
 
 	/**
-	 * buildCities(): Simple method to return a string array of acceptable AREA/CITIES This was pulled
-	 * from: http://worldtimeapi.org/api/timezone
+	 * buildCities(): Simple method to return a string array of acceptable AREA/CITIES This was pulled from:
+	 * http://worldtimeapi.org/api/timezone
 	 * 
 	 */
 	private String[] buildCities() {

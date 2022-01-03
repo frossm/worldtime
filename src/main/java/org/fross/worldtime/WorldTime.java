@@ -109,7 +109,7 @@ public class WorldTime {
 		return cityInfo.get(key);
 	}
 
-	// TODO: Shoudln't need to make another call - pretty up the hashmap values
+	// TODO: Shouldn't need to make another call - pretty up the hashmap values
 	public String queryValueAll(String url) {
 		String result = null;
 		try {
@@ -121,14 +121,32 @@ public class WorldTime {
 		return result;
 	}
 
+	/**
+	 * queryDayOfWeekLong(): Return a string of the long name of the provided day number [0-6]
+	 * 
+	 * @param i
+	 * @return
+	 */
 	public String queryDayOfWeekLong(int i) {
 		return DAY_OF_WEEK_LONG[i];
 	}
 
+	/**
+	 * queryDayOfWeekShort(): Return a strong of the short name of the provided day number [0-6]
+	 * 
+	 * @param i
+	 * @return
+	 */
 	public String queryDayOfWeekShort(int i) {
 		return DAY_OF_WEEK_SHORT[i];
 	}
 
+	/**
+	 * queryMonthNameShort(): Return the short name of the provided month [1-12]
+	 * 
+	 * @param i
+	 * @return
+	 */
 	public String queryMonthNameShort(int i) {
 		return MONTH_NAME_LONG[i];
 	}

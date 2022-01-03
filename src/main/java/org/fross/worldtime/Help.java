@@ -56,7 +56,7 @@ public class Help {
 		Output.printColorln(Ansi.Color.YELLOW, "\nManaging Favorites:");
 		Output.printColorln(Ansi.Color.WHITE, " -a        Add the provided area/cities on the command line to your list");
 		Output.printColorln(Ansi.Color.WHITE, " -e        Erase all saved favorites");
-		Output.printColorln(Ansi.Color.WHITE, " -i FILE   Import new set of saved areas/cities from file");
+		Output.printColorln(Ansi.Color.WHITE, " -i FILE   Import new set of saved areas/cities from file replacing current favorites");
 		Output.printColorln(Ansi.Color.WHITE, " -l        List currently saved favorites");
 		Output.printColorln(Ansi.Color.WHITE, " -r        Remove the TimeZone/Cities on the commandline from favorites");
 		Output.printColorln(Ansi.Color.WHITE, " -s        Show a list of supported timezones/cities and exit");

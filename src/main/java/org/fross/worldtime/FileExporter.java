@@ -36,8 +36,6 @@ import org.fusesource.jansi.Ansi;
 public class FileExporter {
 	File exportFile = null;
 	FileWriter exportFileFW = null;
-	boolean exportSymbolHeaderWritten = false;
-	boolean exportIndexHeaderWritten = false;
 
 	/**
 	 * FileExporter(): FileExporter Constructor
@@ -95,7 +93,23 @@ public class FileExporter {
 	 * @return
 	 */
 	public String queryExportFilename() {
-		return this.exportFile.toString();
+		return this.exportFile.getPath();
+	}
+
+	/**
+	 * exportFavorites(): Write to the export file - one favorite per line
+	 * 
+	 */
+	public void exportFavorites() {
+		Output.debugPrint("Exporting Favorites:");
+		try {
+			for (String fav : Favorites.getFavorites()) {
+				Output.debugPrint("   - " + fav);
+				exportFileFW.append(fav + "\n");
+			}
+		} catch (IOException ex) {
+			Output.printColorln(Ansi.Color.RED, "Error writing to export file '" + this.queryExportFilename() + "'\n" + ex.getMessage());
+		}
 	}
 
 }
