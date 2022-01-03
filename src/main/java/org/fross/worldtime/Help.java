@@ -46,29 +46,29 @@ public class Help {
 
 		Output.printColorln(Ansi.Color.YELLOW, "\nUsage:");
 		Output.printColorln(Ansi.Color.WHITE, " Standard:  java -jar worldtime.jar [options] [area/city] [area/city] [...]");
-		Output.printColorln(Ansi.Color.WHITE, " Snap:  worldtime [options] [area/city]");
+		Output.printColorln(Ansi.Color.WHITE, " Snap:      worldtime [options] [area/city]");
 
 		Output.printColorln(Ansi.Color.YELLOW, "\nGeneral Command Line Options:");
-		Output.printColorln(Ansi.Color.WHITE, " -D       Start in debug mode");
-		Output.printColorln(Ansi.Color.WHITE, " -h | ?   Show this help information and exit");
-		Output.printColorln(Ansi.Color.WHITE, " -v       Display version information and the latest release on GitHub, and exit");
+		Output.printColorln(Ansi.Color.WHITE, " -D        Start in debug mode");
+		Output.printColorln(Ansi.Color.WHITE, " -h | ?    Show this help information and exit");
+		Output.printColorln(Ansi.Color.WHITE, " -v        Display version information and the latest release on GitHub, and exit");
 
 		Output.printColorln(Ansi.Color.YELLOW, "\nManaging Favorites:");
-		Output.printColorln(Ansi.Color.WHITE, " -a            Add the provided area/cities on the command line to your list");
-		Output.printColorln(Ansi.Color.WHITE, " -e            Erase all saved favorites");
-		Output.printColorln(Ansi.Color.WHITE, " -i FILE       Import new set of saved areas/cities from file");
-		Output.printColorln(Ansi.Color.WHITE, " -l            List currently saved favorites");
-		Output.printColorln(Ansi.Color.WHITE, " -r            Remove the TimeZone/Cities on the commandline from favorites");
-		Output.printColorln(Ansi.Color.WHITE, " -s            Show a list of supported timezones/cities and exit");
-		Output.printColorln(Ansi.Color.WHITE, " -x FILE       Export your saved timezone/cities to the provided file");
+		Output.printColorln(Ansi.Color.WHITE, " -a        Add the provided area/cities on the command line to your list");
+		Output.printColorln(Ansi.Color.WHITE, " -e        Erase all saved favorites");
+		Output.printColorln(Ansi.Color.WHITE, " -i FILE   Import new set of saved areas/cities from file");
+		Output.printColorln(Ansi.Color.WHITE, " -l        List currently saved favorites");
+		Output.printColorln(Ansi.Color.WHITE, " -r        Remove the TimeZone/Cities on the commandline from favorites");
+		Output.printColorln(Ansi.Color.WHITE, " -s        Show a list of supported timezones/cities and exit");
+		Output.printColorln(Ansi.Color.WHITE, " -x FILE   Export your saved timezone/cities to the provided file");
 
 		Output.printColorln(Ansi.Color.YELLOW, "\nManaging Display:");
 		Output.printColorln(Ansi.Color.WHITE, " -2  Display time in 24 hour format instead of the default 12 hour format");
 		Output.printColorln(Ansi.Color.WHITE, " -d  Show detailed time information");
 		Output.printColorln(Ansi.Color.WHITE, " -z  Disable colorized output");
 
-		Output.printColorln(Ansi.Color.YELLOW, "\nTimeZone Formats:");
-		Output.printColorln(Ansi.Color.WHITE, "  For a list of supported timezones and cities, please execute with ");
+		Output.printColorln(Ansi.Color.YELLOW, "\nAreas/Cities:");
+		Output.printColorln(Ansi.Color.WHITE, "  For a list of supported areas and cities, please execute with ");
 		Output.printColorln(Ansi.Color.WHITE, "  the '-s' switch.  Then choose the area/city you would like to save");
 		Output.printColorln(Ansi.Color.WHITE, "  to your favorites (or for use with the input command).");
 
