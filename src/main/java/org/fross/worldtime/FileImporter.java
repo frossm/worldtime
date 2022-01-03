@@ -44,8 +44,14 @@ public class FileImporter {
 
 			Output.debugPrint("Importing favorites from file");
 			while (line != null) {
-				Output.debugPrint("  - " + line);
-				favorites.add(line);
+				// Skip anything without a slash in it else add it to the return array list
+				if (line.isBlank()) {
+					Output.debugPrint("  - Skiping blank line");
+				} else {
+					Output.debugPrint("  - " + line);
+					favorites.add(line);
+				}
+				// Read the next line from the input file
 				line = reader.readLine();
 			}
 
