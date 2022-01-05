@@ -42,7 +42,7 @@ You should not need any special snap permissions to run, although without assign
 |-e|Erase all saved favorites|
 |-i FILE|Import a new set of favorites from an external file.  Existing favorites will be replaced by the imported set.  The format is simply one AREA/CITY per line|
 |-l|List the current saved favorites|
-|-r AREA/CITY|Remove the AREA/CITY on the command line from the favorites.  Currently only the first AREA/CITY entered will be removed.  This will be updated later to remove all AREA/CITY items on the command line|
+|-r AREA/CITY|Remove all of the AREA/CITIES on the command line from the favorites|
 |-s|Show all supported AREA/CITY combinations.  This is very important as you'll probably start with `-s` to determine which ones you'd like to add to your favorites|
 |-x FILE|Export the current favorites to the file provided.  The format is simply one AREA/CITY per line|
 

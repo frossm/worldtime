@@ -158,10 +158,15 @@ public class Main {
 			// Import a list of favorites and replace those currently saved
 			case 'i':
 				String importFileName = optG.getOptarg();
-				Output.printColorln(Ansi.Color.CYAN, "Importing favorites from: '" + importFileName + "'");
 				ArrayList<String> importedFavs = FileImporter.readFavorites(importFileName);
 				Favorites.eraseAll();
 				Favorites.add(importedFavs);
+				
+				Output.printColorln(Ansi.Color.YELLOW, "Imported the Following Favorites:");
+				for (String i : importedFavs) {
+					Output.printColorln(Ansi.Color.WHITE, "  - " + i);
+				}
+				
 				System.exit(0);
 				break;
 
@@ -201,7 +206,7 @@ public class Main {
 			// Export the TZ/City information to the provided file
 			case 'x':
 				String exportFileName = optG.getOptarg();
-				Output.printColorln(Ansi.Color.CYAN, "Exporting favorites to: '" + exportFileName + "'");
+				Output.printColorln(Ansi.Color.YELLOW, "Exporting favorites to: '" + exportFileName + "'");
 				FileExporter fe = new FileExporter(exportFileName);
 				fe.exportFavorites();
 				fe.close();
