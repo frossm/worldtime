@@ -2,7 +2,7 @@
 
 *The console based tool to display times around the world*
 
-<img align="right" width="300" src="https://github.com/frossm/worldtime/blob/master/graphics/WorldTimeLogo500.png">Worldtime is a simple command line tool to display the current local times in various locations around the globe.  There are a lot of very nice web-based tools to do this, and much nicer than this little program, but I wanted something simple that can be executed quickly on the command line.  It also needed to be able to store the areas/cities that I use most frequently and handle the various daylight saving time implementations that exist
+<img align="right" width="300" src="https://github.com/frossm/worldtime/raw/master/graphics/WorldTimeLogo500.png">Worldtime is a simple command line tool to display the current local times in various locations around the globe.  There are a lot of very nice web-based tools to do this, and much nicer than this little program, but I wanted something simple that can be executed quickly on the command line.  It also needed to be able to store the areas/cities that I use most frequently and handle the various daylight saving time implementations that exist
 
 Overall, I'm happy with this little tool and not sure what updates or enhancements I'd make, but if anyone has ideas, please post them on the GitHub discussion board and I'll do my best to implement.
 
