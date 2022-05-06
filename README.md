@@ -62,6 +62,10 @@ I would encourage anyone with a supported Linux platform to install WorldTime as
 
 `sudo snap install worldtime`  (Assuming snap is installed.  Ubuntu and most of it's derivatives have it installed by default)
 
+Secondly, if you will be using the import / export capability, you'll need to give your Worldtime access to your home directory.  This is done via the following command after Worldtime is installed:
+
+`sudo snap connect worldtime:home`
+
 This will install the application into a sandbox where it is separate from other applications.  Java is even included in the SNAP package so you don't even have to have it elsewhere.
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/worldtime)

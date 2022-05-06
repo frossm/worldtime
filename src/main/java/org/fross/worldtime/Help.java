@@ -80,7 +80,9 @@ public class Help {
 		Output.printColorln(Ansi.Color.CYAN, "  (Use '-s' switch to see complete list...)");
 
 		Output.printColorln(Ansi.Color.YELLOW, "\nNotes:");
-		Output.printColorln(Ansi.Color.WHITE, "  Special thanks to the folks at WorldTimeAPI.org for powering this program");
+		Output.printColorln(Ansi.Color.WHITE, "  If installed via a snap, you'll need to assign Worldtime the ability to read/write");
+		Output.printColorln(Ansi.Color.WHITE, "  to your home directory via:  sudo snap connect worldtime:home");
+		Output.printColorln(Ansi.Color.WHITE, "\n  Special thanks to the folks at WorldTimeAPI.org for powering this program");
 		Output.printColorln(Ansi.Color.WHITE, "  with their fantastic API.  Your work is appreciated!");
 	}
 }

@@ -1,5 +1,5 @@
 name: worldtime
-version: '1.1.4'
+version: '1.1.5'
 summary: WorldTime is a console based tool to display local times around the world
 description: |
   WorldTime is a small utility that will display local time in cities
@@ -15,6 +15,9 @@ compression: lzo
 apps:
   worldtime:
     command: bin/java -Djava.util.prefs.userRoot="$SNAP_USER_DATA" -jar $SNAP/jar/worldtime.jar
+    plugs:
+       - network
+       - home
 
 parts:
   library:
@@ -33,7 +36,3 @@ parts:
     override-prime: |
       snapcraftctl prime
       rm -vf usr/lib/jvm/java-11-openjdk-*/lib/security/blacklisted.certs
-
-plugs:
-   worldtime-network:
-      interface: network
