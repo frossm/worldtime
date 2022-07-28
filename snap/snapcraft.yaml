@@ -1,5 +1,5 @@
 name: worldtime
-version: '1.1.6'
+version: '1.1.7'
 summary: WorldTime is a console based tool to display local times around the world
 description: |
   WorldTime is a small utility that will display local time in cities
@@ -24,7 +24,7 @@ parts:
     plugin: maven
     source: https://github.com/frossm/library.git
     source-type: git
-    source-tag: 'v2022.06.28'
+    source-tag: 'v2022.07.28'
     maven-options: [install]
 
   worldtime:
