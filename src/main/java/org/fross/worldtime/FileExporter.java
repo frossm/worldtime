@@ -101,10 +101,10 @@ public class FileExporter {
 	 * 
 	 */
 	public void exportFavorites() {
-		Output.debugPrint("Exporting Favorites:");
+		Output.debugPrintln("Exporting Favorites:");
 		try {
 			for (String fav : Favorites.getFavorites()) {
-				Output.debugPrint("   - " + fav);
+				Output.debugPrintln("   - " + fav);
 				exportFileFW.append(fav + "\n");
 			}
 		} catch (IOException ex) {

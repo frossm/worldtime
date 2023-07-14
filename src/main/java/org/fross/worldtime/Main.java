@@ -243,9 +243,9 @@ public class Main {
 		}
 
 		// Determine if any AREA/CITIES were entered on the command line
-		Output.debugPrint("Number of Area/Cities entered on the command line: " + (args.length - optG.getOptind()));
+		Output.debugPrintln("Number of Area/Cities entered on the command line: " + (args.length - optG.getOptind()));
 		for (int i = optG.getOptind(); i < args.length; i++) {
-			Output.debugPrint(" - Area/City Entered: " + args[i]);
+			Output.debugPrintln(" - Area/City Entered: " + args[i]);
 			areaCitiesList.add(args[i]);
 		}
 
@@ -257,9 +257,9 @@ public class Main {
 		}
 
 		// Read list of favorites and add it to the list we'll display
-		Output.debugPrint("Number of Area/Cities pulled from favorites: " + Favorites.getFavorites().length);
+		Output.debugPrintln("Number of Area/Cities pulled from favorites: " + Favorites.getFavorites().length);
 		for (String i : Favorites.getFavorites()) {
-			Output.debugPrint(" - Area/City Retrieved: " + i);
+			Output.debugPrintln(" - Area/City Retrieved: " + i);
 			areaCitiesList.add(i);
 		}
 

@@ -42,13 +42,13 @@ public class FileImporter {
 			reader = new BufferedReader(new FileReader(fileName));
 			String line = reader.readLine();
 
-			Output.debugPrint("Importing favorites from file");
+			Output.debugPrintln("Importing favorites from file");
 			while (line != null) {
 				// Skip anything without a slash in it else add it to the return array list
 				if (line.isBlank()) {
-					Output.debugPrint("  - Skiping blank line");
+					Output.debugPrintln("  - Skiping blank line");
 				} else {
-					Output.debugPrint("  - " + line);
+					Output.debugPrintln("  - " + line);
 					favorites.add(line);
 				}
 				// Read the next line from the input file

@@ -49,7 +49,7 @@ public class WorldTime {
 		String apiResult = null;
 		try {
 			// Call the WorldTime API
-			Output.debugPrint("Calling API: '" + url + "'");
+			Output.debugPrintln("Calling API: '" + url + "'");
 			apiResult = URLOperations.ReadURL(url);
 		} catch (Exception ex) {
 			Output.printColorln(Ansi.Color.RED, "ERROR: Could not read from WorldTimeAPI: " + url);
@@ -81,13 +81,13 @@ public class WorldTime {
 		Pattern pattern = Pattern.compile("(\\d\\d\\d\\d)-(\\d+)-(\\d+)T(\\d\\d):(\\d+):(\\d+)\\..*");
 		Matcher m = pattern.matcher(this.queryValue("datetime"));
 		if (m.find()) {
-			Output.debugPrint("DateTime:" + m.group(0));
-			Output.debugPrint("Year:\t" + m.group(1));
-			Output.debugPrint("Month:\t" + m.group(2));
-			Output.debugPrint("Day:\t" + m.group(3));
-			Output.debugPrint("Hour:\t" + m.group(4));
-			Output.debugPrint("Minute:\t" + m.group(5));
-			Output.debugPrint("Second:\t" + m.group(6));
+			Output.debugPrintln("DateTime:" + m.group(0));
+			Output.debugPrintln("Year:\t" + m.group(1));
+			Output.debugPrintln("Month:\t" + m.group(2));
+			Output.debugPrintln("Day:\t" + m.group(3));
+			Output.debugPrintln("Hour:\t" + m.group(4));
+			Output.debugPrintln("Minute:\t" + m.group(5));
+			Output.debugPrintln("Second:\t" + m.group(6));
 
 			cityInfo.put("year", m.group(1));
 			cityInfo.put("month", m.group(2));

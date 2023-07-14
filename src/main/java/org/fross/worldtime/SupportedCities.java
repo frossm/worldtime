@@ -35,7 +35,7 @@ public class SupportedCities {
 
 	// Constructor builds list of supported areas and cities into instance
 	public SupportedCities() {
-		Output.debugPrint("Building cityList");
+		Output.debugPrintln("Building cityList");
 		this.cityList = buildCities();
 	}
 
